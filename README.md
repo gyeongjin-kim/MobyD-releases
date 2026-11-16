@@ -21,6 +21,22 @@
   <img src="docs/graph.png" alt="MobyD commit graph" />
 </p>
 
+## Why "MobyD"?
+
+GitKraken is named after the **Kraken**, the giant squid of sea legend. The giant squid has exactly one natural enemy: the **sperm whale**. The most famous sperm whale of all is **Moby Dick**, the white whale — hence **MobyD**.
+
+MobyD started as an answer to the things we kept running into with GitKraken: it is heavy (a full Electron app), and it cannot work on a repository that lives on *another* computer. MobyD is a small native app (a 4 MB download) that treats a repository on your SSH-reachable PC the same as one on your laptop.
+
+## What it does
+
+- **Commit graph** with branches, tags, stashes and work in progress; staging by file, hunk or line.
+- **Everyday Git** — commit, branch, merge, rebase (interactive too), cherry-pick, stash, worktrees, blame, file history, with **Undo / Redo**.
+- **SSH repositories** — pick a host from your `~/.ssh/config`, browse its folders and open a repository there as if it were local. Nothing to install on the other machine except Git; macOS, Linux and Windows hosts work.
+- **GitHub, GitLab and Gitea / Forgejo** — sign in, clone, and review or merge pull requests.
+- Dark and light themes, English and Korean UI, built with Tauri 2, Rust and React.
+
+## About this repository
+
 This repository holds the release builds of MobyD and the update feed the app reads. Every release carries:
 
 | File | |
