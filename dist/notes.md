@@ -1,0 +1,2 @@
+- Mark the checked-out commit with icons and add a guided tour
+- Push the release tag by name in the release steps

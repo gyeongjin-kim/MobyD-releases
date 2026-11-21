@@ -1,0 +1,11 @@
+{
+  "version": "0.1.6",
+  "notes": "- Mark the checked-out commit with icons and add a guided tour\n- Push the release tag by name in the release steps",
+  "pub_date": "2026-11-21T06:26:23.367Z",
+  "platforms": {
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdkt6Qnc2eDFnZGgzSXRQU3E1NkNmcThpSXpldjFoWUZCbysyYkszY0wrMlJoODc3YVJjd0wxcm84c3AxdlRnc3hjck1zTmxTZ0dDbFVXazZXQlQ0YWlJYkpDcVdWcXc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MjQyMzU4CWZpbGU6TW9ieUQuYXBwLnRhci5negl2ZXJzaW9uOjAuMS42ClNMTmFYeWNobVRWOVp4cDNyZHl4UzQ0Z0ZQOTNPdHZmUzBuNGpIVlhMaklDMkpVelZNMkdZNFVScFJNbkxhblVxelM3eCtMSTNFT25xMmZEOGUrSkJnPT0K",
+      "url": "https://github.com/gyeongjin-kim/MobyD-releases/releases/download/v0.1.6/MobyD.app.tar.gz"
+    }
+  }
+}
