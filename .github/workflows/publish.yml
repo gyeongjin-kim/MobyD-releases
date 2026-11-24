@@ -1,0 +1,38 @@
+name: Publish
+
+# The build pipeline pushes one commit to the `incoming` branch holding the
+# files of a new version under dist/. This turns it into a GitHub release.
+on:
+  push:
+    branches: [incoming]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cd dist
+          VERSION="$(cat VERSION)"
+          case "$VERSION" in
+            ""|*[!0-9A-Za-z.+-]*) echo "::error::bad version '$VERSION'"; exit 1 ;;
+          esac
+          TAG="v$VERSION"
+          test -s MobyD.app.tar.gz && test -s latest.json && test -s "MobyD_${VERSION}_arm64.dmg"
+          cp "MobyD_${VERSION}_arm64.dmg" MobyD-macOS-arm64.dmg
+          FILES=("MobyD_${VERSION}_arm64.dmg" MobyD-macOS-arm64.dmg MobyD.app.tar.gz latest.json)
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "${FILES[@]}" --clobber
+          else
+            gh release create "$TAG" "${FILES[@]}" --target main --title "MobyD $VERSION" --notes-file notes.md --latest
+          fi
